@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: arka_play_db
+      POSTGRES_PASSWORD: arka0829
+      POSTGRES_USER: arka
+    ports:
+      - '5433:5432'
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
